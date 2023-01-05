@@ -1,8 +1,8 @@
 @import "variables";
 
 .App {
-  width: fit-content;
-  height: auto;
+  width: 500px;
+  height: max-content;
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
@@ -16,11 +16,21 @@
   text-align: center;
 }
 
+.Footer{
+  font-size: x-small;
+  text-align: right;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
 
 
 .App-logo {
-  height: 40vmin;
+  height: 4em;
   pointer-events: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
