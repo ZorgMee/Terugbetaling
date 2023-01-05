@@ -1,4 +1,7 @@
 /*bootstrap customizations (should be before import)*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+$font-family-sans-serif: 'Montserrat';
 
 $btn-border-radius:           1.4em !default;
 $btn-border-radius-lg:        2.688em !default;
@@ -21,7 +24,7 @@ $zm-white:#FDFAF6;
 
 $theme-colors: (
         "primary": $zm-primary-orange,
-        "danger": #F5AB66,
+        "secondary": $zm-green,
 );
 
 @import "~bootstrap/scss/bootstrap";

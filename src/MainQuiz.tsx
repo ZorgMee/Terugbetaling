@@ -1,10 +1,12 @@
 import React from "react";
-import {Button, Form} from "react-bootstrap";
+import {Button, Col, Container, Row, ToggleButton, ButtonGroup} from "react-bootstrap";
+
 import {quizData} from "./quizData";
 
 class MainQuiz extends React.Component {
     state: StateInterface = {
         currentQuestion: 0,
+        previousQuestions : [],
         myAnswer: null,
         options: [],
         disabled: true,
@@ -26,9 +28,12 @@ class MainQuiz extends React.Component {
     }
 
     nextQuestionHandler = () => {
-        const {myAnswer} = this.state;
+        const {myAnswer, previousQuestions, currentQuestion} = this.state;
+        previousQuestions.push(currentQuestion)
+
 
         this.setState({
+            previousQuestions: previousQuestions,
             currentQuestion: myAnswer?.nextQuestionId
         });
     };
@@ -45,10 +50,6 @@ class MainQuiz extends React.Component {
         }
     }
 
-    //check answer
-    checkAnswer = (answer: QuestionOption) => {
-        this.setState({myAnswer: answer, disabled: false});
-    };
     finishHandler = () => {
         if (this.state.currentQuestion === quizData.length - 1) {
             this.setState({
@@ -57,12 +58,26 @@ class MainQuiz extends React.Component {
         }
     };
 
+    previousQuestionHandler = () => {
+        const {previousQuestions} = this.state;
+        let prevQuestion = previousQuestions.pop()
+
+        this.setState({
+            myAnswer: null,
+            previousQuestions: previousQuestions,
+            currentQuestion: prevQuestion
+        });
+
+    }
+
+
+
     render() {
-        const {options, currentQuestion, isEnd} = this.state;
+        const {options, currentQuestion, isEnd, myAnswer} = this.state;
 
         if (isEnd) {
             return (
-                <div className="result">
+                <div  className="result">
                     <h3>Game Over your Final score is points </h3>
                     <div>
                         The correct answer's for the questions was
@@ -77,48 +92,66 @@ class MainQuiz extends React.Component {
                 </div>
             );
         } else {
-            console.log(this.state)
 
             return (
-                <div className="App">
-                    <h1>{this.state.question.question} </h1>
-                    <Form>
-                        <div key={`default-radio`} className="mb-3">
-                            {options.map(option => (
-                                <Form.Check
-                                    key={option.answer}
-                                    type={"radio"}
-                                    name={"options-group"}
-                                    label={option.answer}
-                                    onClick={() => this.checkAnswer(option)}
-                                />
-                            ))}
-                        </div>
-                    </Form>
-                    {currentQuestion < quizData.length - 1 && (
-                        <Button
-                            className="ui inverted button"
-                            disabled={this.state.disabled}
-                            onClick={this.nextQuestionHandler}
-                        >
-                            Next
-                        </Button>
-                    )}
-                    {/* //adding a finish button */}
-                    {currentQuestion === quizData.length - 1 && (
-                        <Button className="ui inverted button" onClick={this.finishHandler}>
-                            Finish
-                        </Button>
-                    )}
-                </div>
+                    <Container>
+                        <Row>
+                            <h2>{this.state.question.question} </h2>
+                        </Row>
+                        <br/>
+                        <Row>
+                            <Col>
+                                <ButtonGroup vertical className="d-flex OptionPicker">
+                                    {options.map((radio, idx) => (
+                                        <ToggleButton
+                                            key={idx}
+                                            id={`radio-${idx}`}
+                                            type="radio"
+                                            variant="outline-primary"
+                                            name="radio"
+                                            value={idx}
+                                            checked={myAnswer === radio}
+                                            onChange={(e) => {
+                                                this.setState({
+                                                myAnswer: options[e.target.value as unknown as number],
+                                                disabled: false
+                                            })}}
+                                        >
+                                            {radio.answer}
+                                        </ToggleButton>
+                                    ))}
+                                </ButtonGroup>
+                            </Col>
+                        </Row>
+                        <br/>
+                        <Row>
+                            <Col>
+                                {currentQuestion > 0 && (
+                                    <Button onClick={this.previousQuestionHandler} variant={'secondary'}>
+                                        Vorige
+                                    </Button>
+                                )}
+                            </Col>
+                            <Col>
+                                {currentQuestion < quizData.length - 1 && (
+                                    <Button disabled={this.state.disabled} onClick={this.nextQuestionHandler} variant={'secondary'}>
+                                        Volgende
+                                    </Button>
+                                )}
+                            </Col>
+                        </Row>
+                    </Container>
             );
         }
     }
+
+
 }
 
 interface StateInterface {
     question: Question;
     currentQuestion: number;
+    previousQuestions: Array<number>
     options: Array<QuestionOption>;
     myAnswer: QuestionOption | null;
     disabled: boolean;

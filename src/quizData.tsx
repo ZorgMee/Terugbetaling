@@ -1,7 +1,7 @@
 export const quizData = [
     {
         id: 0,
-        question: `Ben je ouder dan 18 Jaar?`,
+        question: `Ben je ouder dan 18 jaar?`,
         options: [
             {answer: 'Ja', nextQuestionId: 1},
             {answer: 'Nee', nextQuestionId: 0}

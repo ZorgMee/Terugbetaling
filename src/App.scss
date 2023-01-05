@@ -1,8 +1,22 @@
 @import "variables";
 
 .App {
+  width: fit-content;
+  height: auto;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
+
+.OptionPicker {
+  width: 60%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+}
+
+
 
 .App-logo {
   height: 40vmin;
