@@ -1,0 +1,27 @@
+/*bootstrap customizations (should be before import)*/
+
+$btn-border-radius:           1.4em !default;
+$btn-border-radius-lg:        2.688em !default;
+$btn-border-radius-sm:        .844em !default;
+
+$input-btn-padding-y:         .5rem !default;
+$input-btn-padding-x:         1.1rem !default;
+$btn-font-size:               .875rem !default;
+$btn-font-size-sm:            .688rem !default;
+
+$white: #FDFAF6 !default;
+
+$zm-yellow           : rgba(247, 230, 186, 1);
+$zm-green : rgba(217,224, 191, 1);
+$zm-blue: rgba(184, 217, 200, 1);
+$zm-secondary-orange : rgb(239, 213, 169);
+$zm-primary-orange: rgba(201, 125, 75, 1);
+$zm-accent-orange: rgba(245, 171, 102, 1);
+$zm-white:#FDFAF6;
+
+$theme-colors: (
+        "primary": $zm-primary-orange,
+        "danger": #F5AB66,
+);
+
+@import "~bootstrap/scss/bootstrap";
