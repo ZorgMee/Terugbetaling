@@ -10,7 +10,6 @@ class MiddlePage extends React.Component<MiddlePageProps> {
         myAnswer: null,
         options: [],
         disabled: true,
-        isEnd: false,
         question: quizData[0],
     };
 
@@ -68,87 +67,65 @@ class MiddlePage extends React.Component<MiddlePageProps> {
 
 
     render() {
-        const {options, currentQuestion, isEnd, myAnswer} = this.state;
-
-        if (isEnd) {
-            return (
-                <div className="result">
-                    <h3>Game Over your Final score is points </h3>
-                    <div>
-                        The correct answer's for the questions was
-                        {/*                     <ul>
-                            {quizData.map((item, index) => (
-                                <li className="ui floating message options" key={index}>
-                                    {item.answer}
-                                </li>
+        const {options, currentQuestion, myAnswer} = this.state;
+        return (
+            <Container>
+                <Row>
+                    <h2>{this.state.question.question} </h2>
+                </Row>
+                <br/>
+                <Row>
+                    <Col>
+                        <ButtonGroup vertical className="d-flex OptionPicker">
+                            {options.map((radio, idx) => (
+                                <ToggleButton
+                                    key={idx}
+                                    id={`radio-${idx}`}
+                                    type="radio"
+                                    variant="outline-primary"
+                                    name="radio"
+                                    value={idx}
+                                    checked={myAnswer === radio}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            myAnswer: options[e.target.value as unknown as number],
+                                            disabled: false
+                                        })
+                                    }}
+                                >
+                                    {radio.answer}
+                                </ToggleButton>
                             ))}
-                        </ul>*/}
-                    </div>
-                </div>
-            );
-        } else {
-
-            return (
-                <Container>
-                    <Row>
-                        <h2>{this.state.question.question} </h2>
-                    </Row>
-                    <br/>
-                    <Row>
-                        <Col>
-                            <ButtonGroup vertical className="d-flex OptionPicker">
-                                {options.map((radio, idx) => (
-                                    <ToggleButton
-                                        key={idx}
-                                        id={`radio-${idx}`}
-                                        type="radio"
-                                        variant="outline-primary"
-                                        name="radio"
-                                        value={idx}
-                                        checked={myAnswer === radio}
-                                        onChange={(e) => {
-                                            this.setState({
-                                                myAnswer: options[e.target.value as unknown as number],
-                                                disabled: false
-                                            })
-                                        }}
-                                    >
-                                        {radio.answer}
-                                    </ToggleButton>
-                                ))}
-                            </ButtonGroup>
-                        </Col>
-                    </Row>
-                    <br/>
-                    <Row>
-                        <Col>
-                            {currentQuestion > 0 && (
-                                <Button onClick={this.previousQuestionHandler} variant={'secondary'}>
-                                    Vorige
-                                </Button>
-                            )}
-                        </Col>
-                        <Col>
-                            {myAnswer?.goToEnd
-                                ?
-                                <Button disabled={this.state.disabled} onClick={this.finishHandler}
-                                        variant={'secondary'}>
-                                    Resultaat
-                                </Button>
-                                :
-                                <Button disabled={this.state.disabled} onClick={this.nextQuestionHandler}
-                                        variant={'secondary'}>
-                                    Volgende
-                                </Button>
-                            }
-                        </Col>
-                    </Row>
-                </Container>
-            );
-        }
+                        </ButtonGroup>
+                    </Col>
+                </Row>
+                <br/>
+                <Row>
+                    <Col>
+                        {currentQuestion > 0 && (
+                            <Button onClick={this.previousQuestionHandler} variant={'secondary'}>
+                                Vorige
+                            </Button>
+                        )}
+                    </Col>
+                    <Col>
+                        {myAnswer?.goToEnd
+                            ?
+                            <Button disabled={this.state.disabled} onClick={this.finishHandler}
+                                    variant={'secondary'}>
+                                Resultaat
+                            </Button>
+                            :
+                            <Button disabled={this.state.disabled} onClick={this.nextQuestionHandler}
+                                    variant={'secondary'}>
+                                Volgende
+                            </Button>
+                        }
+                    </Col>
+                </Row>
+            </Container>
+        );
     }
-
-
 }
 
 interface StateInterface {
@@ -158,7 +135,6 @@ interface StateInterface {
     options: Array<QuestionOption>;
     myAnswer: QuestionOption | null;
     disabled: boolean;
-    isEnd: boolean;
 }
 
 interface Question {
