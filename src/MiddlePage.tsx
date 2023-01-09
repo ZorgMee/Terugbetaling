@@ -1,9 +1,10 @@
 import React from "react";
-import {Button, Col, Container, Row, ToggleButton, ButtonGroup} from "react-bootstrap";
+import {Button, ButtonGroup, Col, Container, Row, ToggleButton} from "react-bootstrap";
 
 import {quizData} from "./quizData";
+import endPage from "./EndPage";
 
-class MainQuiz extends React.Component {
+class MiddlePage extends React.Component<MiddlePageProps> {
     state: StateInterface = {
         currentQuestion: 0,
         previousQuestions : [],
@@ -51,11 +52,8 @@ class MainQuiz extends React.Component {
     }
 
     finishHandler = () => {
-        if (this.state.currentQuestion === quizData.length - 1) {
-            this.setState({
-                isEnd: true
-            });
-        }
+        const endPage = this.state.myAnswer ? this.state.myAnswer.nextQuestionId : 0
+        this.props.finishHandler(endPage)
     };
 
     previousQuestionHandler = () => {
@@ -67,9 +65,7 @@ class MainQuiz extends React.Component {
             previousQuestions: previousQuestions,
             currentQuestion: prevQuestion
         });
-
     }
-
 
 
     render() {
@@ -133,11 +129,18 @@ class MainQuiz extends React.Component {
                                 )}
                             </Col>
                             <Col>
-                                {currentQuestion < quizData.length - 1 && (
-                                    <Button disabled={this.state.disabled} onClick={this.nextQuestionHandler} variant={'secondary'}>
+                                {myAnswer?.goToEnd
+                                    ?
+                                    <Button disabled={this.state.disabled} onClick={this.finishHandler}
+                                            variant={'secondary'}>
+                                        Resultaat
+                                    </Button>
+                                    :
+                                    <Button disabled={this.state.disabled} onClick={this.nextQuestionHandler}
+                                            variant={'secondary'}>
                                         Volgende
                                     </Button>
-                                )}
+                                }
                             </Col>
                         </Row>
                     </Container>
@@ -167,7 +170,12 @@ interface Question {
 interface QuestionOption {
     answer: string
     nextQuestionId: number
+    goToEnd: boolean
+}
+
+interface MiddlePageProps {
+    finishHandler: (endpage: number) => void,
 }
 
 
-export default MainQuiz;
+export default MiddlePage;
