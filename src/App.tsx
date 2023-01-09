@@ -16,7 +16,9 @@ function App() {
                     <Container>
                         <Row>
                             <Col xs={2}>
-                                <img className="App-logo" src={logo} alt="ZorgMee"/>
+                                <a href="https://www.zorgmee.be">
+                                    <img className="App-logo" src={logo} alt="ZorgMee"/>
+                                </a>
                             </Col>
                             <Col style={{margin: "auto"}}>
                                 {"Deze tool gratis op jouw website? Klik "}
