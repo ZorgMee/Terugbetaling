@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.scss';
-import MiddlePage from "./MiddlePage";
 import logo from './zm-logo.svg'
 import {Card, Col, Container, Row} from "react-bootstrap";
 import Quiz from "./Quiz";

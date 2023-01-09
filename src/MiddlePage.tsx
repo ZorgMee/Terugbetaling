@@ -2,12 +2,11 @@ import React from "react";
 import {Button, ButtonGroup, Col, Container, Row, ToggleButton} from "react-bootstrap";
 
 import {quizData} from "./quizData";
-import endPage from "./EndPage";
 
 class MiddlePage extends React.Component<MiddlePageProps> {
     state: StateInterface = {
         currentQuestion: 0,
-        previousQuestions : [],
+        previousQuestions: [],
         myAnswer: null,
         options: [],
         disabled: true,
@@ -73,7 +72,7 @@ class MiddlePage extends React.Component<MiddlePageProps> {
 
         if (isEnd) {
             return (
-                <div  className="result">
+                <div className="result">
                     <h3>Game Over your Final score is points </h3>
                     <div>
                         The correct answer's for the questions was
@@ -90,60 +89,61 @@ class MiddlePage extends React.Component<MiddlePageProps> {
         } else {
 
             return (
-                    <Container>
-                        <Row>
-                            <h2>{this.state.question.question} </h2>
-                        </Row>
-                        <br/>
-                        <Row>
-                            <Col>
-                                <ButtonGroup vertical className="d-flex OptionPicker">
-                                    {options.map((radio, idx) => (
-                                        <ToggleButton
-                                            key={idx}
-                                            id={`radio-${idx}`}
-                                            type="radio"
-                                            variant="outline-primary"
-                                            name="radio"
-                                            value={idx}
-                                            checked={myAnswer === radio}
-                                            onChange={(e) => {
-                                                this.setState({
+                <Container>
+                    <Row>
+                        <h2>{this.state.question.question} </h2>
+                    </Row>
+                    <br/>
+                    <Row>
+                        <Col>
+                            <ButtonGroup vertical className="d-flex OptionPicker">
+                                {options.map((radio, idx) => (
+                                    <ToggleButton
+                                        key={idx}
+                                        id={`radio-${idx}`}
+                                        type="radio"
+                                        variant="outline-primary"
+                                        name="radio"
+                                        value={idx}
+                                        checked={myAnswer === radio}
+                                        onChange={(e) => {
+                                            this.setState({
                                                 myAnswer: options[e.target.value as unknown as number],
                                                 disabled: false
-                                            })}}
-                                        >
-                                            {radio.answer}
-                                        </ToggleButton>
-                                    ))}
-                                </ButtonGroup>
-                            </Col>
-                        </Row>
-                        <br/>
-                        <Row>
-                            <Col>
-                                {currentQuestion > 0 && (
-                                    <Button onClick={this.previousQuestionHandler} variant={'secondary'}>
-                                        Vorige
-                                    </Button>
-                                )}
-                            </Col>
-                            <Col>
-                                {myAnswer?.goToEnd
-                                    ?
-                                    <Button disabled={this.state.disabled} onClick={this.finishHandler}
-                                            variant={'secondary'}>
-                                        Resultaat
-                                    </Button>
-                                    :
-                                    <Button disabled={this.state.disabled} onClick={this.nextQuestionHandler}
-                                            variant={'secondary'}>
-                                        Volgende
-                                    </Button>
-                                }
-                            </Col>
-                        </Row>
-                    </Container>
+                                            })
+                                        }}
+                                    >
+                                        {radio.answer}
+                                    </ToggleButton>
+                                ))}
+                            </ButtonGroup>
+                        </Col>
+                    </Row>
+                    <br/>
+                    <Row>
+                        <Col>
+                            {currentQuestion > 0 && (
+                                <Button onClick={this.previousQuestionHandler} variant={'secondary'}>
+                                    Vorige
+                                </Button>
+                            )}
+                        </Col>
+                        <Col>
+                            {myAnswer?.goToEnd
+                                ?
+                                <Button disabled={this.state.disabled} onClick={this.finishHandler}
+                                        variant={'secondary'}>
+                                    Resultaat
+                                </Button>
+                                :
+                                <Button disabled={this.state.disabled} onClick={this.nextQuestionHandler}
+                                        variant={'secondary'}>
+                                    Volgende
+                                </Button>
+                            }
+                        </Col>
+                    </Row>
+                </Container>
             );
         }
     }
