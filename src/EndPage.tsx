@@ -22,7 +22,7 @@ class EndPage extends React.Component<EndPageProps> {
                 <Row>
                     <Col>
                         <Button onClick={this.props.restartHandler} variant={'secondary'}>
-                            Opnieuw Beginnen
+                            Opnieuw beginnen
                         </Button>
                     </Col>
                 </Row>
