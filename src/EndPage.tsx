@@ -1,11 +1,12 @@
 import React from "react";
 import {Button, Col, Container, Row} from "react-bootstrap";
-import {endData} from "./quizData";
+import {endData, quizData} from "./quizData";
 
 class EndPage extends React.Component<EndPageProps> {
 
     render() {
-        const data = endData[this.props.endPage]
+        let data = endData.find(d => d.id === this.props.endPage)
+        data = data ? data : {id: 'error', header: 'Oeps', paragraph: 'Er ging iets mis'}
 
         return (
             <Container>
@@ -32,7 +33,7 @@ class EndPage extends React.Component<EndPageProps> {
 }
 
 interface EndPageProps {
-    endPage: number,
+    endPage: string,
     restartHandler: () => void
 }
 

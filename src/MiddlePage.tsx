@@ -5,7 +5,7 @@ import {quizData} from "./quizData";
 
 class MiddlePage extends React.Component<MiddlePageProps> {
     state: StateInterface = {
-        currentQuestion: 0,
+        currentQuestion: "start",
         previousQuestions: [],
         myAnswer: null,
         options: [],
@@ -14,10 +14,14 @@ class MiddlePage extends React.Component<MiddlePageProps> {
     };
 
     loadQuizData = () => {
+        let question = quizData.find(q => q.id === this.state.currentQuestion)
+        question = question ? question : {id: 'error', question: 'Oeps, er ging iets mis', options: []}
+        let options = question.options
+
         this.setState(() => {
             return {
-                question: quizData[this.state.currentQuestion],
-                options: quizData[this.state.currentQuestion].options
+                question: question,
+                options: options
             };
         });
     };
@@ -37,20 +41,19 @@ class MiddlePage extends React.Component<MiddlePageProps> {
         });
     };
 
-    componentDidUpdate(prevProps: any, prevState: { currentQuestion: number; }) {
+    componentDidUpdate(prevProps: any, prevState: { currentQuestion: string; }) {
         if (this.state.currentQuestion !== prevState.currentQuestion) {
+            this.loadQuizData();
             this.setState(() => {
                 return {
                     disabled: true,
-                    question: quizData[this.state.currentQuestion],
-                    options: quizData[this.state.currentQuestion].options,
                 };
             });
         }
     }
 
     finishHandler = () => {
-        const endPage = this.state.myAnswer ? this.state.myAnswer.nextQuestionId : 0
+        const endPage = this.state.myAnswer ? this.state.myAnswer.nextQuestionId : ""
         this.props.finishHandler(endPage)
     };
 
@@ -102,7 +105,7 @@ class MiddlePage extends React.Component<MiddlePageProps> {
                 <br/>
                 <Row>
                     <Col>
-                        {currentQuestion > 0 && (
+                        {currentQuestion !== 'start' && (
                             <Button onClick={this.previousQuestionHandler} variant={'secondary'}>
                                 Vorige
                             </Button>
@@ -130,27 +133,27 @@ class MiddlePage extends React.Component<MiddlePageProps> {
 
 interface StateInterface {
     question: Question;
-    currentQuestion: number;
-    previousQuestions: Array<number>
+    currentQuestion: string;
+    previousQuestions: Array<string>
     options: Array<QuestionOption>;
     myAnswer: QuestionOption | null;
     disabled: boolean;
 }
 
 interface Question {
-    id: number;
+    id: string;
     question: string;
     options: Array<QuestionOption>
 }
 
 interface QuestionOption {
     answer: string
-    nextQuestionId: number
+    nextQuestionId: string
     goToEnd: boolean
 }
 
 interface MiddlePageProps {
-    finishHandler: (endpage: number) => void,
+    finishHandler: (endpage: string) => void,
 }
 
 

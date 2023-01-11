@@ -6,10 +6,10 @@ import EndPage from "./EndPage";
 class Quiz extends React.Component {
     state: StateInterface = {
         phase: "start",
-        endPage: 0,
+        endPage: 'cm-end',
     };
 
-    finishHandler = (endpage: number) => {
+    finishHandler = (endpage: string) => {
         this.setState({
             phase: "end",
             endPage: endpage
@@ -38,7 +38,7 @@ class Quiz extends React.Component {
 
 interface StateInterface {
     phase: String;
-    endPage: number
+    endPage: string
 }
 
 export default Quiz;
