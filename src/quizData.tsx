@@ -6,7 +6,7 @@ export const quizData = [
             {answer: 'Christelijke Multualiteit', nextQuestionId: 'cm', goToEnd: false},
             {answer: 'Liberale Mutualiteit', nextQuestionId: 'lm', goToEnd: false},
             {answer: 'Neutraal Ziekenfonds', nextQuestionId: 'neut', goToEnd: false},
-            {answer: 'Helan', nextQuestionId: 'helan', goToEnd: false},
+            {answer: 'Helan', nextQuestionId: 'helan', goToEnd: true},
             {answer: 'Railcare', nextQuestionId: 'rail', goToEnd: false},
         ],
     },
@@ -67,6 +67,14 @@ export const quizData = [
             {answer: 'Mutualia', nextQuestionId: 'mutualia', goToEnd: true},
         ],
     },
+    {
+        id: 'railcare',
+        question: `Wat is je leeftijd?`,
+        options: [
+            {answer: 'Jonger dan 18, of in dit kalenderjaar 18 geworden', nextQuestionId: 'railcare-kid', goToEnd: true},
+            {answer: 'Ouder dan 18 jaar', nextQuestionId: 'railcare-adult', goToEnd: true},
+        ],
+    },
 ];
 
 export const endData = [
@@ -119,5 +127,20 @@ export const endData = [
         id: "mutualia",
         header: 'Einde van de quiz',
         paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €120 euro (of 6 sessies) per kalenderjaar. Daarbovenop heb je 1x per jaar recht op €20 terugbetaling wanneer je hulpverlener voor jou een bilan opmaakt'
+    },
+    {
+        id: "helan",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van 12 sessies per jaar.'
+    },
+    {
+        id: "railcare-kid",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van 20 sessies per kalenderjaar.'
+    },
+    {
+        id: "railcare-kid",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van 15 sessies per kalenderjaar.'
     },
 ];
