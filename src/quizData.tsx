@@ -9,26 +9,93 @@ export const quizData = [
     },
     {
         id: 'cm',
-        question: `Kinderbijslag?`,
+        question: `Ben je kind of jongere met recht op kinderbijslag?`,
         options: [
-            {answer: 'vol', nextQuestionId: 'cm-adult', goToEnd: false},
-            {answer: 'kind', nextQuestionId: 'cm-kid', goToEnd: false}
+            {answer: 'Ja', nextQuestionId: 'cm-kid', goToEnd: false},
+            {answer: 'Nee', nextQuestionId: 'cm-adult', goToEnd: false}
+        ],
+    },
+    {
+        id: 'cm-kid',
+        question: `Heb je recht op verhoogde tegemoetkoming?`,
+        options: [
+            {answer: 'Ja', nextQuestionId: 'cm-kid-high', goToEnd: true},
+            {answer: 'Nee', nextQuestionId: 'cm-kid-normal', goToEnd: true}
+        ],
+    },
+    {
+        id: 'cm-adult',
+        question: `Heb je recht op verhoogde tegemoetkoming?`,
+        options: [
+            {answer: 'Ja', nextQuestionId: 'cm-adult-high', goToEnd: true},
+            {answer: 'Nee', nextQuestionId: 'cm-adult-normal', goToEnd: true}
         ],
     },
     {
         id: 'lm',
-        question: `Kinderbijslag?`,
+        question: `Ben je kind of jongere met recht op kinderbijslag?`,
         options: [
             {answer: 'Ja', nextQuestionId: 'lm-kid', goToEnd: false},
             {answer: 'Nee', nextQuestionId: 'lm-adult', goToEnd: false}
         ],
-    }
+    },
+    {
+        id: 'lm-kid',
+        question: `Welk soort begeleiding wens je te volgen?`,
+        options: [
+            {answer: 'Psychologische begeleiding', nextQuestionId: 'lm-kid-therapy', goToEnd: true},
+            {answer: 'Cursus Mindfulness', nextQuestionId: 'lm-kid-mindful', goToEnd: true}
+        ],
+    },
+    {
+        id: 'lm-adult',
+        question: `Welk soort begeleiding wens je te volgen?`,
+        options: [
+            {answer: 'Psychologische begeleiding', nextQuestionId: 'lm-adult-therapy', goToEnd: true},
+            {answer: 'Cursus Mindfulness', nextQuestionId: 'lm-adult-mindful', goToEnd: true}
+        ],
+    },
 ];
 
 export const endData = [
     {
-        id: "cm-end",
-        header: `Einde`,
-        paragraph: 'dit is het einde van de quiz'
+        id: "cm-kid-high",
+        header: 'Einde van de quiz',
+        paragraph: `Je hebt recht op een terugbetaling van 75% van prijs van jouw sessie, met een maxiumum van €45. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies`
+    },
+    {
+        id: "cm-kid-normal",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van 50% van prijs van jouw sessie, met een maxiumum van €30. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies'
+    },
+    {
+        id: "cm-adult-high",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling tot €15 per sessie, met een maxiumum van 75% van de prijs van een sessie. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies'
+    },
+    {
+        id: "cm-adult-normal",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling tot €10 per sessie, met een maxiumum van 50% van de prijs van een sessie. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies'
+    },
+    {
+        id: "lm-kid-therapy",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €120 euro per kalenderjaar (tesamen met tussenkomsten cursus mindfullness)'
+    },
+    {
+        id: "lm-kid-mindful",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €120 euro per kalenderjaar (tesamen met tussenkomsten individuele therapie)'
+    },
+    {
+        id: "lm-adult-therapy",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van €60 euro per kalenderjaar (tesamen met tussenkomsten cursus mindfullness)'
+    },
+    {
+        id: "lm-adult-mindful",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €60 euro per kalenderjaar (tesamen met tussenkomsten individuele therapie)'
     },
 ];
