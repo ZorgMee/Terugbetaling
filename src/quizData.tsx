@@ -4,7 +4,10 @@ export const quizData = [
         question: `Bij welke mutualiteit ben je lid?`,
         options: [
             {answer: 'Christelijke Multualiteit', nextQuestionId: 'cm', goToEnd: false},
-            {answer: 'Liberale Mutualiteit', nextQuestionId: 'lm', goToEnd: false}
+            {answer: 'Liberale Mutualiteit', nextQuestionId: 'lm', goToEnd: false},
+            {answer: 'Neutraal Ziekenfonds', nextQuestionId: 'neut', goToEnd: false},
+            {answer: 'Helan', nextQuestionId: 'helan', goToEnd: false},
+            {answer: 'Railcare', nextQuestionId: 'rail', goToEnd: false},
         ],
     },
     {
@@ -55,6 +58,15 @@ export const quizData = [
             {answer: 'Cursus Mindfulness', nextQuestionId: 'lm-adult-mindful', goToEnd: true}
         ],
     },
+    {
+        id: 'neut',
+        question: `Bij welke afdeling ben je lid?`,
+        options: [
+            {answer: 'Vlaams & Neutraal Ziekenfonds', nextQuestionId: 'neut-diverse', goToEnd: true},
+            {answer: 'Neutraal Ziekenfonds Vlaanderen', nextQuestionId: 'neut-diverse', goToEnd: true},
+            {answer: 'Mutualia', nextQuestionId: 'mutualia', goToEnd: true},
+        ],
+    },
 ];
 
 export const endData = [
@@ -97,5 +109,15 @@ export const endData = [
         id: "lm-adult-mindful",
         header: 'Einde van de quiz',
         paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €60 euro per kalenderjaar (tesamen met tussenkomsten individuele therapie)'
+    },
+    {
+        id: "neut-diverse",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van €100 euro (of 10 sessies) per kalenderjaar'
+    },
+    {
+        id: "mutualia",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €120 euro (of 6 sessies) per kalenderjaar. Daarbovenop heb je 1x per jaar recht op €20 terugbetaling wanneer je hulpverlener voor jou een bilan opmaakt'
     },
 ];
