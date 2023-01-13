@@ -16,13 +16,13 @@ function App() {
                     <Container>
                         <Row>
                             <Col xs={2}>
-                                <a href="https://www.zorgmee.be">
+                                <a href="https://www.zorgmee.be" target="_parent">
                                     <img className="App-logo" src={logo} alt="ZorgMee"/>
                                 </a>
                             </Col>
                             <Col style={{margin: "auto"}}>
                                 {"Deze tool gratis op jouw website? Klik "}
-                                <a className="link-primary" href="https://www.zorgmee.be">hier</a>
+                                <a className="link-primary" href="https://www.zorgmee.be/terugbetaling-zelf-op-je-website" target="_parent">hier</a>
                                 {" voor meer info."}
                             </Col>
                         </Row>
