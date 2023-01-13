@@ -7,9 +7,9 @@ import Quiz from "./Quiz";
 function App() {
     return (
         <div className="App">
-            <Card>
+            <Card className="Card">
                 <Card.Header>Bereken jouw terugbetaling</Card.Header>
-                <Card.Body>
+                <Card.Body className="CardBody">
                     <Quiz/>
                 </Card.Body>
                 <Card.Footer className="Footer">
