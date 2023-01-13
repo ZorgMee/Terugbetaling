@@ -8,7 +8,7 @@ export const quizData = [
             {answer: 'Neutraal Ziekenfonds', nextQuestionId: 'neut', goToEnd: false},
             {answer: 'Socialistische Mutualiteiten', nextQuestionId: 'soc', goToEnd: false},
             {answer: 'Helan', nextQuestionId: 'helan', goToEnd: true},
-            {answer: 'Railcare', nextQuestionId: 'rail', goToEnd: false},
+            {answer: 'Railcare', nextQuestionId: 'railcare', goToEnd: false},
         ],
     },
     {
@@ -191,7 +191,7 @@ export const endData = [
         paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van 20 sessies per kalenderjaar.'
     },
     {
-        id: "railcare-kid",
+        id: "railcare-adult",
         header: 'Einde van de quiz',
         paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van 15 sessies per kalenderjaar.'
     },
