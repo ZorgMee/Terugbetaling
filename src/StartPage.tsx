@@ -9,12 +9,12 @@ class StartPage extends React.Component<StartPageProps> {
         return (
             <Container>
                 <Row>
-                    <h2> Welkom, bij deze tekst </h2>
+                    <h2> Welkom bij deze quiz </h2>
                 </Row>
                 <br/>
                 <Row>
                     <Col>
-                        <p> een beetje uitleg over de quiz</p>
+                        <p>Bepaal in minder dan 1 minuut op hoeveel terugbetaling je recht hebt.</p>
                     </Col>
                 </Row>
                 <br/>
