@@ -6,6 +6,7 @@ export const quizData = [
             {answer: 'Christelijke Multualiteit', nextQuestionId: 'cm', goToEnd: false},
             {answer: 'Liberale Mutualiteit', nextQuestionId: 'lm', goToEnd: false},
             {answer: 'Neutraal Ziekenfonds', nextQuestionId: 'neut', goToEnd: false},
+            {answer: 'Socialistische Mutualiteiten', nextQuestionId: 'soc', goToEnd: false},
             {answer: 'Helan', nextQuestionId: 'helan', goToEnd: true},
             {answer: 'Railcare', nextQuestionId: 'rail', goToEnd: false},
         ],
@@ -75,6 +76,57 @@ export const quizData = [
             {answer: 'Ouder dan 18 jaar', nextQuestionId: 'railcare-adult', goToEnd: true},
         ],
     },
+    {
+        id: 'soc',
+        question: `Ben welke provinciale afdeling ben je lid?`,
+        options: [
+            {answer: 'De Voorzorg Antwerpen', nextQuestionId: 'soc-ant', goToEnd: false},
+            {answer: 'De Voorzorg Limburg', nextQuestionId: 'soc-other', goToEnd: false},
+            {answer: 'Bond Moyson Oost-Vlaanderen', nextQuestionId: 'soc-other', goToEnd: false},
+            {answer: 'Bond Moyson West-Vlaanderen', nextQuestionId: 'soc-other', goToEnd: false},
+            {answer: 'Federatie van Socialistische Mutualiteiten van Brabant ', nextQuestionId: 'soc-brab', goToEnd: true},
+        ],
+    },
+    {
+        id: 'soc-other',
+        question: `Ben je kind of jongere met recht op kinderbijslag?`,
+        options: [
+            {answer: 'Ja', nextQuestionId: 'soc-other-kid', goToEnd: false},
+            {answer: 'Nee', nextQuestionId: 'soc-other-adult', goToEnd: false}
+        ],
+    },
+    {
+        id: 'soc-other-kid',
+        question: `Heb je recht op verhoogde tegemoetkoming?`,
+        options: [
+            {answer: 'Ja', nextQuestionId: 'soc-other-kid-high', goToEnd: true},
+            {answer: 'Nee', nextQuestionId: 'soc-other-kid-normal', goToEnd: true}
+        ],
+    },
+    {
+        id: 'soc-other-adult',
+        question: `Heb je recht op verhoogde tegemoetkoming?`,
+        options: [
+            {answer: 'Ja', nextQuestionId: 'soc-other-adult-high', goToEnd: true},
+            {answer: 'Nee', nextQuestionId: 'soc-other-adult-normal', goToEnd: true}
+        ],
+    },
+    {
+        id: 'soc-ant',
+        question: `Ben je kind of jongere met recht op kinderbijslag?`,
+        options: [
+            {answer: 'Ja', nextQuestionId: 'soc-ant-kid', goToEnd: false},
+            {answer: 'Nee', nextQuestionId: 'soc-other-adult', goToEnd: false}
+        ],
+    },
+    {
+        id: 'soc-ant-kid',
+        question: `Heb je recht op verhoogde tegemoetkoming?`,
+        options: [
+            {answer: 'Ja', nextQuestionId: 'soc-ant-kid-high', goToEnd: true},
+            {answer: 'Nee', nextQuestionId: 'soc-ant-kid-normal', goToEnd: true}
+        ],
+    },
 ];
 
 export const endData = [
@@ -142,5 +194,40 @@ export const endData = [
         id: "railcare-kid",
         header: 'Einde van de quiz',
         paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van 15 sessies per kalenderjaar.'
+    },
+    {
+        id: "soc-other-kid-high",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €30. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
+    },
+    {
+        id: "soc-other-kid-normal",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €20. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
+    },
+    {
+        id: "soc-other-adult-high",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €15. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
+    },
+    {
+        id: "soc-other-adult-normal",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €10. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
+    },
+    {
+        id: "soc-brab",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie. Deze terugbetaling kan je aanvragen voor 8 sessies per kalenderjaar.'
+    },
+    {
+        id: "soc-ant-kid-high",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van €30 per sessie, met een maxiumum van €360 per kalenderjaar. Deze terugbetaling kan je aanvragen voor 8 sessies per jaar indien het om individuele therapie gaat, of 16 sessies per jaar voor groepstherapie.'
+    },
+    {
+        id: "soc-ant-kid-normal",
+        header: 'Einde van de quiz',
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maxiumum van €240 per kalenderjaar. Deze terugbetaling kan je aanvragen voor 8 sessies per jaar indien het om individuele therapie gaat, of 16 sessies per jaar voor groepstherapie.'
     },
 ];
