@@ -1,7 +1,7 @@
 export const quizData = [
     {
         id: 'start',
-        question: `Bij welke mutualiteit ben je lid?`,
+        question: `Bij welke mutualiteit ben je aangesloten?`,
         options: [
             {answer: 'Christelijke Multualiteit', nextQuestionId: 'cm', goToEnd: false},
             {answer: 'Liberale Mutualiteit', nextQuestionId: 'lm', goToEnd: false},
@@ -78,7 +78,7 @@ export const quizData = [
     },
     {
         id: 'soc',
-        question: `Ben welke provinciale afdeling ben je lid?`,
+        question: `Bij welke provinciale afdeling ben je aangesloten?`,
         options: [
             {answer: 'De Voorzorg Antwerpen', nextQuestionId: 'soc-ant', goToEnd: false},
             {answer: 'De Voorzorg Limburg', nextQuestionId: 'soc-other', goToEnd: false},
@@ -89,7 +89,7 @@ export const quizData = [
     },
     {
         id: 'soc-other',
-        question: `Ben je kind of jongere met recht op kinderbijslag?`,
+        question: `Ben je een kind of jongere met recht op kinderbijslag?`,
         options: [
             {answer: 'Ja', nextQuestionId: 'soc-other-kid', goToEnd: false},
             {answer: 'Nee', nextQuestionId: 'soc-other-adult', goToEnd: false}
@@ -113,7 +113,7 @@ export const quizData = [
     },
     {
         id: 'soc-ant',
-        question: `Ben je kind of jongere met recht op kinderbijslag?`,
+        question: `Ben je een kind of jongere met recht op kinderbijslag?`,
         options: [
             {answer: 'Ja', nextQuestionId: 'soc-ant-kid', goToEnd: false},
             {answer: 'Nee', nextQuestionId: 'soc-other-adult', goToEnd: false}
@@ -132,102 +132,102 @@ export const quizData = [
 export const endData = [
     {
         id: "cm-kid-high",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: `Je hebt recht op een terugbetaling van 75% van prijs van jouw sessie, met een maxiumum van €45. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies`
     },
     {
         id: "cm-kid-normal",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van 50% van prijs van jouw sessie, met een maxiumum van €30. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies'
     },
     {
         id: "cm-adult-high",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling tot €15 per sessie, met een maxiumum van 75% van de prijs van een sessie. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies'
     },
     {
         id: "cm-adult-normal",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling tot €10 per sessie, met een maxiumum van 50% van de prijs van een sessie. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies'
     },
     {
         id: "lm-kid-therapy",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €120 euro per kalenderjaar (tesamen met tussenkomsten cursus mindfullness)'
     },
     {
         id: "lm-kid-mindful",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €120 euro per kalenderjaar (tesamen met tussenkomsten individuele therapie)'
     },
     {
         id: "lm-adult-therapy",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van €60 euro per kalenderjaar (tesamen met tussenkomsten cursus mindfullness)'
     },
     {
         id: "lm-adult-mindful",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €60 euro per kalenderjaar (tesamen met tussenkomsten individuele therapie)'
     },
     {
         id: "neut-diverse",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van €100 euro (of 10 sessies) per kalenderjaar'
     },
     {
         id: "mutualia",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €120 euro (of 6 sessies) per kalenderjaar. Daarbovenop heb je 1x per jaar recht op €20 terugbetaling wanneer je hulpverlener voor jou een bilan opmaakt'
     },
     {
         id: "helan",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van 12 sessies per jaar.'
     },
     {
         id: "railcare-kid",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van 20 sessies per kalenderjaar.'
     },
     {
         id: "railcare-adult",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van 15 sessies per kalenderjaar.'
     },
     {
         id: "soc-other-kid-high",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €30. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
     },
     {
         id: "soc-other-kid-normal",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €20. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
     },
     {
         id: "soc-other-adult-high",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €15. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
     },
     {
         id: "soc-other-adult-normal",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €10. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
     },
     {
         id: "soc-brab",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie. Deze terugbetaling kan je aanvragen voor 8 sessies per kalenderjaar.'
     },
     {
         id: "soc-ant-kid-high",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van €30 per sessie, met een maxiumum van €360 per kalenderjaar. Deze terugbetaling kan je aanvragen voor 8 sessies per jaar indien het om individuele therapie gaat, of 16 sessies per jaar voor groepstherapie.'
     },
     {
         id: "soc-ant-kid-normal",
-        header: 'Einde van de quiz',
+        header: '',
         paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maxiumum van €240 per kalenderjaar. Deze terugbetaling kan je aanvragen voor 8 sessies per jaar indien het om individuele therapie gaat, of 16 sessies per jaar voor groepstherapie.'
     },
 ];
