@@ -9,7 +9,7 @@ class StartPage extends React.Component<StartPageProps> {
         return (
             <Container>
                 <Row>
-                    <h2> Terugbetalingstool </h2>
+                    <h2 className="bs-styles"> Terugbetalingstool </h2>
                 </Row>
                 <br/>
                 <Row>

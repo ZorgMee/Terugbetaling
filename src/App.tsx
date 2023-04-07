@@ -6,7 +6,7 @@ import Quiz from "./Quiz";
 
 function App() {
     return (
-        <div className="App">
+        <div className="App bs-styles">
             <Card className="Card">
                 <Card.Header>Bereken jouw terugbetaling</Card.Header>
                 <Card.Body className="CardBody">
