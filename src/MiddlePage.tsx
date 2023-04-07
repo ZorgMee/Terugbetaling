@@ -74,7 +74,7 @@ class MiddlePage extends React.Component<MiddlePageProps> {
         return (
             <Container>
                 <Row>
-                    <h2>{this.state.question.question} </h2>
+                    <h2 className="bs-styles"> {this.state.question.question} </h2>
                 </Row>
                 <br/>
                 <Row>

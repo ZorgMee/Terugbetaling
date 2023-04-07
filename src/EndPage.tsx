@@ -11,7 +11,7 @@ class EndPage extends React.Component<EndPageProps> {
         return (
             <Container>
                 <Row>
-                    <h2> {data.header}</h2>
+                    <h2 className="bs-styles">  {data.header}</h2>
                 </Row>
                 <br/>
                 <Row>
