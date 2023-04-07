@@ -18,6 +18,12 @@
   }
 }
 
+@media all{
+  .container{
+    max-width: unset;
+  }
+}
+
 .bs-styles {
   font-family: var(--bs-body-font-family);
   font-weight: var(--bs-body-font-weight);
