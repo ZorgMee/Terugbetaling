@@ -81,11 +81,8 @@ export const quizData = [
         id: 'soc',
         question: `Bij welke provinciale afdeling ben je aangesloten?`,
         options: [
-            {answer: 'De Voorzorg Antwerpen', nextQuestionId: 'soc-ant', goToEnd: false},
-            {answer: 'De Voorzorg Limburg', nextQuestionId: 'soc-other', goToEnd: false},
-            {answer: 'Bond Moyson Oost-Vlaanderen', nextQuestionId: 'soc-other', goToEnd: false},
-            {answer: 'Bond Moyson West-Vlaanderen', nextQuestionId: 'soc-other', goToEnd: false},
-            {answer: 'Federatie van Socialistische Mutualiteiten van Brabant ', nextQuestionId: 'soc-brab', goToEnd: true},
+            {answer: 'Solidaris Brabant ', nextQuestionId: 'soc-brab', goToEnd: true},
+            {answer: 'Andere regio Solidaris', nextQuestionId: 'soc-other', goToEnd: false},
         ],
     },
     {
@@ -179,7 +176,7 @@ export const endData = [
     {
         id: "neut-diverse",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van €100 euro (of 10 sessies) per kalenderjaar'
+        paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van €150 euro (of 15 sessies) per kalenderjaar'
     },
     {
         id: "mutualia",
@@ -225,15 +222,5 @@ export const endData = [
         id: "soc-brab",
         header: '',
         paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie. Deze terugbetaling kan je aanvragen voor 8 sessies per kalenderjaar.'
-    },
-    {
-        id: "soc-ant-kid-high",
-        header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van €30 per sessie, met een maxiumum van €360 per kalenderjaar. Deze terugbetaling kan je aanvragen voor 8 sessies per jaar indien het om individuele therapie gaat, of 16 sessies per jaar voor groepstherapie.'
-    },
-    {
-        id: "soc-ant-kid-normal",
-        header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maxiumum van €240 per kalenderjaar. Deze terugbetaling kan je aanvragen voor 8 sessies per jaar indien het om individuele therapie gaat, of 16 sessies per jaar voor groepstherapie.'
     },
 ];
