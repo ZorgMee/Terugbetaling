@@ -56,7 +56,8 @@ export const quizData = [
         question: `Welk soort begeleiding wens je te volgen?`,
         options: [
             {answer: 'Psychologische begeleiding', nextQuestionId: 'lm-adult-therapy', goToEnd: true},
-            {answer: 'Cursus Mindfulness', nextQuestionId: 'lm-adult-mindful', goToEnd: true}
+            {answer: 'Cursus Mindfulness', nextQuestionId: 'lm-adult-mindful', goToEnd: true},
+            {answer: 'Consultatie bij klinisch seksuoloog', nextQuestionId: 'lm-sex-therapy', goToEnd: true}
         ],
     },
     {
@@ -153,22 +154,27 @@ export const endData = [
     {
         id: "lm-kid-therapy",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €120 euro per kalenderjaar (tesamen met tussenkomsten cursus mindfullness)'
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €160 euro per kalenderjaar (tesamen met tussenkomsten cursus mindfullness)'
     },
     {
         id: "lm-kid-mindful",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €120 euro per kalenderjaar (tesamen met tussenkomsten individuele therapie)'
+        paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €160 euro per kalenderjaar (tesamen met tussenkomsten individuele therapie)'
     },
     {
         id: "lm-adult-therapy",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van €60 euro per kalenderjaar (tesamen met tussenkomsten cursus mindfullness)'
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €160 euro per kalenderjaar (tesamen met tussenkomsten cursus mindfullness)'
     },
     {
         id: "lm-adult-mindful",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €60 euro per kalenderjaar (tesamen met tussenkomsten individuele therapie)'
+        paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €160 euro per kalenderjaar (tesamen met tussenkomsten individuele therapie)'
+    },
+    {
+        id: "lm-sex-therapy",
+        header: '',
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €160 euro per kalenderjaar (bovenop tussenkomsten voor psychologische begeleiding)'
     },
     {
         id: "neut-diverse",
