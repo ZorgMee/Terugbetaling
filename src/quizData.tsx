@@ -3,7 +3,7 @@ export const quizData = [
         id: 'start',
         question: `Bij welke mutualiteit ben je aangesloten?`,
         options: [
-            {answer: 'Christelijke Multualiteit', nextQuestionId: 'cm', goToEnd: false},
+            {answer: 'Christelijke Mutualiteit', nextQuestionId: 'cm', goToEnd: false},
             {answer: 'Liberale Mutualiteit', nextQuestionId: 'lm', goToEnd: false},
             {answer: 'Neutraal Ziekenfonds', nextQuestionId: 'neut', goToEnd: false},
             {answer: 'Socialistische Mutualiteiten', nextQuestionId: 'soc', goToEnd: false},
@@ -15,8 +15,16 @@ export const quizData = [
         id: 'cm',
         question: `Ben je kind of jongere met recht op kinderbijslag?`,
         options: [
-            {answer: 'Ja', nextQuestionId: 'cm-kid', goToEnd: false},
+            {answer: 'Ja', nextQuestionId: 'cm-kid-type', goToEnd: false},
             {answer: 'Nee', nextQuestionId: 'cm-adult', goToEnd: false}
+        ],
+    },
+    {
+        id: 'cm-kid-type',
+        question: `Welk soort begeleiding wens je te volgen?`,
+        options: [
+            {answer: 'Psychologische begeleiding', nextQuestionId: 'cm-kid', goToEnd: false},
+            {answer: 'Psychodiagnostisch onderzoek', nextQuestionId: 'cm-psychodiag-kid', goToEnd: false}
         ],
     },
     {
@@ -25,6 +33,14 @@ export const quizData = [
         options: [
             {answer: 'Ja', nextQuestionId: 'cm-kid-high', goToEnd: true},
             {answer: 'Nee', nextQuestionId: 'cm-kid-normal', goToEnd: true}
+        ],
+    },
+    {
+        id: 'cm-psychodiag-kid',
+        question: `Heb je recht op verhoogde tegemoetkoming?`,
+        options: [
+            {answer: 'Ja', nextQuestionId: 'cm-psychodiag-kid-high', goToEnd: true},
+            {answer: 'Nee', nextQuestionId: 'cm-psychodiag-kid-normal', goToEnd: true}
         ],
     },
     {
@@ -131,42 +147,52 @@ export const endData = [
     {
         id: "cm-kid-high",
         header: '',
-        paragraph: `Je hebt recht op een terugbetaling van 75% van prijs van jouw sessie, met een maxiumum van €45. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies`
+        paragraph: `Je hebt recht op een terugbetaling van 75% van de prijs van jouw sessie, met een maximum van €55 per sessie. Deze terugbetaling kan je aanvragen voor maximaal 20 sessies per kalenderjaar.`
     },
     {
         id: "cm-kid-normal",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van 50% van prijs van jouw sessie, met een maxiumum van €30. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies'
+        paragraph: 'Je hebt recht op een terugbetaling van 50% van de prijs van jouw sessie, met een maximum van €35 per sessie. Deze terugbetaling kan je aanvragen voor maximaal 20 sessies per kalenderjaar.'
     },
     {
         id: "cm-adult-high",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling tot €15 per sessie, met een maxiumum van 75% van de prijs van een sessie. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies'
+        paragraph: 'Je hebt recht op een terugbetaling van €30 per sessie. Deze terugbetaling kan je aanvragen voor maximaal 20 sessies per kalenderjaar.'
     },
     {
         id: "cm-adult-normal",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling tot €10 per sessie, met een maxiumum van 50% van de prijs van een sessie. Deze terugbetaling kan je aanvragen voor in het totaal tot 24 sessies'
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie. Deze terugbetaling kan je aanvragen voor maximaal 20 sessies per kalenderjaar.'
+    },
+    {
+        id: "cm-psychodiag-kid-high",
+        header: '',
+        paragraph: 'Je hebt recht op een terugbetaling van 50% van jou onderzoek, met een maximum van €500 per kalenderjaar.'
+    },
+    {
+        id: "cm-psychodiag-kid-normal",
+        header: '',
+        paragraph: 'Je hebt recht op een terugbetaling van 35% van jou onderzoek, met een maximum van €350 per kalenderjaar.'
     },
     {
         id: "lm-kid-therapy",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €160 euro per kalenderjaar (tesamen met tussenkomsten cursus mindfullness)'
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €160 per kalenderjaar (tezamen met tussenkomsten cursus mindfulness)'
     },
     {
         id: "lm-kid-mindful",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €160 euro per kalenderjaar (tesamen met tussenkomsten individuele therapie)'
+        paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €160 per kalenderjaar (tezamen met tussenkomsten individuele therapie)'
     },
     {
         id: "lm-adult-therapy",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €160 euro per kalenderjaar (tesamen met tussenkomsten cursus mindfullness)'
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €160 per kalenderjaar (tezamen met tussenkomsten cursus mindfulness)'
     },
     {
         id: "lm-adult-mindful",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €160 euro per kalenderjaar (tesamen met tussenkomsten individuele therapie)'
+        paragraph: 'Je hebt recht op een terugbetaling van 60% van de prijs van de cursus, met een maximum van €160 per kalenderjaar (tezamen met tussenkomsten individuele therapie)'
     },
     {
         id: "lm-sex-therapy",
@@ -176,17 +202,17 @@ export const endData = [
     {
         id: "neut-diverse",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van €150 euro (of 15 sessies) per kalenderjaar'
+        paragraph: 'Je hebt recht op een terugbetaling van €15 per sessie, met een maximum van €225 (of 15 sessies) per kalenderjaar'
     },
     {
         id: "mutualia",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €120 euro (of 6 sessies) per kalenderjaar. Daarbovenop heb je 1x per jaar recht op €20 terugbetaling wanneer je hulpverlener voor jou een bilan opmaakt'
+        paragraph: 'Je hebt recht op een terugbetaling van €20 per sessie, met een maximum van €120 (of 6 sessies) per kalenderjaar. Daarbovenop heb je 1x per jaar recht op €20 terugbetaling wanneer je hulpverlener voor jou een bilan opmaakt'
     },
     {
         id: "helan",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van 12 sessies per jaar.'
+        paragraph: 'Je hebt recht op een terugbetaling van €10 per sessie, met een maximum van 12 sessies per kalenderjaar.'
     },
     {
         id: "railcare-kid",
@@ -201,22 +227,22 @@ export const endData = [
     {
         id: "soc-other-kid-high",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €30. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
+        paragraph: 'Je hebt recht op een terugbetaling tot 50% van de prijs van jouw sessie, met een maximum van €30. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
     },
     {
         id: "soc-other-kid-normal",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €20. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
+        paragraph: 'Je hebt recht op een terugbetaling tot 50% van de prijs van jouw sessie, met een maximum van €20. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
     },
     {
         id: "soc-other-adult-high",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €15. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
+        paragraph: 'Je hebt recht op een terugbetaling tot 50% van de prijs van jouw sessie, met een maximum van €15. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
     },
     {
         id: "soc-other-adult-normal",
         header: '',
-        paragraph: 'Je hebt recht op een terugbetaling tot 50% van prijs van jouw sessie, met een maxiumum van €10. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
+        paragraph: 'Je hebt recht op een terugbetaling tot 50% van de prijs van jouw sessie, met een maximum van €10. Deze terugbetaling kan je aanvragen voor 12 sessies per kalenderjaar.'
     },
     {
         id: "soc-brab",
